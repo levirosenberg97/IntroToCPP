@@ -39,7 +39,6 @@ int main()
 
 	// Problem A
 
-
 	int number = 5;
 
 	number = 9;
