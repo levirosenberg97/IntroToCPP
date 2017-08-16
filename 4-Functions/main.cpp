@@ -46,7 +46,7 @@ void commas(int num1, int num2)
 
 void addThree(int x, int y, int z)
 {
-	std::cout << "Enter 3 Numbers: ";
+	std::cout << "Enter 3 Numbers: " << std::endl;
 	std::cin >> x;
 	std::cin >> y;
 	std::cin >> z;
@@ -119,7 +119,7 @@ void distance()
 	int b1;
 	int b2;
 
-	std::cout << "Enter the Distance Between 2 Points : " << std::endl;
+	std::cout << "Enter the Distance Between 2 Points (x,y): " << std::endl;
 	std::cin >> a1;
 	std::cin >> a2;
 	std::cin >> b1;
@@ -128,7 +128,7 @@ void distance()
 	float distance1 = (b1 - a1) ^ 2;
 	float distance2 = (b2 - a2) ^ 2;
 
-	double dis = sqrt(distance1 - distance2);
+	double dis = sqrt(distance1 + distance2);
 
 	std::cout << "the Distance is " << dis << std::endl;
 }
@@ -151,6 +151,8 @@ int main()
 	clamp(4,56,23);
 
 	distance();
+
+
 
 	system("pause");
 }
