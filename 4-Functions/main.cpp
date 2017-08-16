@@ -1,31 +1,41 @@
 #include<iostream>
 #include<cmath>
 
+
+void helloFunctions();					//prints "Hello Functions" on the screen
+void squares();							//squares the number entered and prints it on the screen
+void fractionsToDecimals();				//divides 2 integers into a single float value decimal	
+void largestDiffrences();				//finds the largest difference between 3 integers
+
+
 void helloFunctions()
 {
-//prints "Hello Functions" on the screen
+	std::cout << "Hello Functions" << std::endl;
 }
 
 void squares()
 {
-	//squares the number entered and prints it on the screen
+	int a;
+
+	std::cout << "Enter a Numbers: "<<std::endl;
+	std::cin >> a;
+	
+	a = a*a;
+	std::cout << "This Number Squared is " << a << std::endl;
 }
 
 void fractionsToDecimals()
 {
-	//divides 2 integers into a single float value decimal	
 }
 
 void largestDiffrences()
 {
-	//finds the largest difference between 3 integers
+	
 }
 
-void commas()
+void commas(int num1, int num2)
 {
 	// puts a comma between 2 int
-	int num1 = 0;
-	int num2 = 0;
 
 	std::cout << "Enter 2 Numbers: " << std::endl;
 	std::cin >> num1;
@@ -34,12 +44,8 @@ void commas()
 	std::cout << num1 << "," << num2 << std::endl;
 }
 
-void addThree()
+void addThree(int x, int y, int z)
 {
-	int x;
-	int y;
-	int z;
-
 	std::cout << "Enter 3 Numbers: ";
 	std::cin >> x;
 	std::cin >> y;
@@ -50,11 +56,8 @@ void addThree()
 }
 
 //Min
-void min()
+void min(int first, int second)
 {
-	int first;
-	int second;
-
 	std::cout << "Enter 2 Numbers: " << std::endl;
 	std::cin >> first;
 	std::cin >> second;
@@ -70,11 +73,8 @@ void min()
 }
 
 //Max
-void max()
+void max(int a,int b)
 {
-	int a = 0;
-	int b = 0;
-
 	std::cout << "Enter 2 Numbers: " << std::endl;
 	std::cin >> a;
 	std::cin >> b;
@@ -90,11 +90,8 @@ void max()
 }
 
 //Clamp
-void clamp()
+void clamp(int number1, int number2, int number3)
 {
-	int number1;
-	int number2;
-	int number3;
 
 	std::cout << "Enter 3 Numbers: " << std::endl;
 	std::cin >> number1;
@@ -143,15 +140,15 @@ int main()
 	fractionsToDecimals();
 	largestDiffrences();
 
-	commas();
+	commas(5, 3);
 
-	addThree();
+	addThree(45,56,78);
 
-	min();
+	min(1,45);
 
-	max();
+	max(23,56);
 
-	clamp();
+	clamp(4,56,23);
 
 	distance();
 
