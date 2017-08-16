@@ -125,8 +125,8 @@ void distance()
 	std::cin >> b1;
 	std::cin >> b2;
 
-	int distance1 = (b1 - a1) ^ 2;
-	int distance2 = (b2 - a2) ^ 2;
+	float distance1 = (b1 - a1) ^ 2;
+	float distance2 = (b2 - a2) ^ 2;
 
 	double dis = sqrt(distance1 - distance2);
 
