@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cmath>
+#include "..\5-Multifile\mathutils.h"
 
 
 void helloFunctions();					//prints "Hello Functions" on the screen
@@ -56,7 +57,7 @@ void addThree(int x, int y, int z)
 }
 
 //Min
-void min(int first, int second)
+void mini(int first, int second)
 {
 	std::cout << "Enter 2 Numbers: " << std::endl;
 	std::cin >> first;
@@ -73,7 +74,7 @@ void min(int first, int second)
 }
 
 //Max
-void max(int a,int b)
+void maxi(int a,int b)
 {
 	std::cout << "Enter 2 Numbers: " << std::endl;
 	std::cin >> a;
@@ -90,7 +91,7 @@ void max(int a,int b)
 }
 
 //Clamp
-void clamp(int number1, int number2, int number3)
+void clmp(int number1, int number2, int number3)
 {
 
 	std::cout << "Enter 3 Numbers: " << std::endl;
@@ -109,6 +110,16 @@ void clamp(int number1, int number2, int number3)
 
 	std::cout << "The Number is " << number3 << std::endl;
 
+}
+
+int dist(int x1, int y1, int x2, int y2)
+{
+	float distance1 = (x2 - x1) ^ 2;
+	float distance2 = (y2 - y1) ^ 2;
+
+	double dis = sqrt(distance1 + distance2);
+
+	std::cout << "the Distance is " << dis << std::endl;
 }
 
 //Distance
@@ -144,11 +155,11 @@ int main()
 
 	addThree(45,56,78);
 
-	min(1,45);
+	mini(1,45);
 
-	max(23,56);
+	maxi(5,56);
 
-	clamp(4,56,23);
+	clmp(4,56,23);
 
 	distance();
 
