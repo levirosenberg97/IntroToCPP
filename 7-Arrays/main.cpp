@@ -5,7 +5,7 @@ void printNumbers(int numbers[], int size)
 {
 	for (int i = 0; i < size; ++i)
 	{
-		cout << numbers[i] << endl;
+		cout << numbers[i];
 	}
 }
 
@@ -51,53 +51,103 @@ int findIndex(int numbers[], int size, int value)
 	{
 		if (numbers[i] == value)
 		{
-			return numbers[i];
+			return i;
 		}
 	
 	}
 	return -1;
 }
 
-int arrayUniqueness(int numbers[], int size)
+bool arrayUniqueness(int numbers[], int size)
 {
 	bool unique;
 	for (int i = 0; i < size; ++i)
 	{
 		for (int j =0; j <size; ++j)
 		{
-			if (i != j &&numbers[i] == numbers[j])
+			if (i == j)
 			{
 				unique = true;
 			}
-			else
+			else if (numbers[i] == numbers[j])
 			{
 				unique = false;
-			}
-			if (unique = true)
-			{
-				cout << "Unique" << endl;
-			}
-			else
-			{
-				cout << "Not" << endl;
+				cout << "not unique" << endl;
+				return false;
 			}
 		}
-		
 	}
-	return unique;
+	
+	cout << "Unique" << endl;
+	return true;
+}
+
+void reverseArray(int numbers[], int size)
+{
+	for (int i = 0; i < size/2; ++i)
+	{
+		int temp = numbers[i];
+
+		numbers[i] = numbers[size - 1 - i];
+
+		numbers[size - 1 - i] = temp;
+	}
+
+}
+
+void sortAscend(int numbers[], int size)
+{
+	while (true)
+	{
+		bool isSorted = true;
+
+		for (int i = 0; i < size - 1; ++i)
+		{
+			if (numbers[i] > numbers[i + 1])
+			{
+				int temp = numbers[i];
+
+
+				numbers[i] = numbers[i + 1];
+				numbers[i + 1] = temp;
+
+				isSorted = false;
+			}
+		}
+		if (isSorted)
+		{
+			break;
+		}
+	}
+}
+
+void sortDescend(int numbers[], int size)
+{
+	sortAscend(numbers, size);
+	reverseArray(numbers, size);
 }
 
 int main()
 {
-	int numbers[]{ 0,1,2,3 };
+	int numbers[]{ 7,2,3,1 };
 
 
 	printNumbers( numbers, 4);
-
+	cout << "\n";
 	cout << sumNumbers(numbers, 4) << endl;
 	cout << smallestValue(numbers, 4) << endl;
 	cout << LargestValue(numbers, 4) << endl;
 	cout << findIndex(numbers, 4, 2) << endl;
+	cout << arrayUniqueness(numbers,4) << endl;
+	reverseArray(numbers, 4);
+	printNumbers(numbers, 4);
+	cout << "\n";
+	sortAscend(numbers, 4);
+	printNumbers(numbers, 4);
+	cout << "\n";
+	sortDescend(numbers, 4);
+	printNumbers(numbers, 4);
+	cout << "\n";
 	system("pause");
 
 }
