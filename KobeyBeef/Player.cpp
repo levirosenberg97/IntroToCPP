@@ -35,6 +35,7 @@ void fight(Entity kobey,Entity enemy)
 			}
 			else if(dmg >= 25)
 			{
+				dmg = 30;
 				enemy.hp = enemy.hp - dmg;
 				cout << "Critical Hit| Enemy has " << enemy.hp << " HP Remaining\n" << endl;	
 			}
@@ -101,6 +102,7 @@ void fight(Entity kobey,Entity enemy)
 					}
 					else if (dmg >= 20)
 					{
+						dmg = 30;
 						kobey.hp = kobey.hp - dmg;
 						cout << "Critical Hit| Kobey has " << kobey.hp << " HP Remaining\n" << endl;
 					}
