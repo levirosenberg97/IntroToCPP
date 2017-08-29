@@ -66,30 +66,45 @@ void spaceInvader()
 	system("pause");
 }
 
-void palindrome()
+bool isAlpha(char query )
 {
-	char input[50] = {};
-	
-	cin.getline(input, 50);
+return  query >= 'A' && query <= 'Z' ||
+		query >= 'a' && query <= 'z';
+}
 
-	int length = strlen(input);
-	
-	if (input[1] = input[length])
-	{
-		cout << "Yep" << endl;
-	}
-	else
-	{
-		cout << "Nope" << endl;
-	}
-	
+char toLower(char query)
+{
+	if (query >= 'A' && query <= 'Z')
+		query += 'a' - 'A';
+	return query;
+}
 
-	system("pause");
+bool palindrome(char string[])
+{
+	int i = 0, j = strlen(string)-1;
+	bool hasChar = false;
+	do
+	{
+		while (!isAlpha(string[i]) && i < strlen(string)) i++;
+		while (!isAlpha(string[j]) && j >= 0) j--;
+
+		if (i >= strlen(string) || j < 0)
+			return hasChar;
+
+		if (toLower(string[i]) != toLower(string[j]))
+			return false;
+		i++;
+		j--;
+		hasChar = true;
+
+	} while (j >= 0);
+
+	return true;
 }
 
 void main()
 {
-	//char buffer[80] = { 0 };
+	char buffer[80];
 
 	//char cstring[] = "Dinosaurs are cool!";
 	//char buffer2[80] = { 0 };
@@ -103,7 +118,7 @@ void main()
 	//namePrompt();
 	//colors();
 	//spaceInvader();
-
-	palindrome();
-
+	cin.getline(buffer, 80);
+	cout << palindrome(buffer) << endl;
+	system("pause");
 }
