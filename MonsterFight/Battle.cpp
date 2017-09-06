@@ -26,7 +26,7 @@ void Enemies(Entity Player, Entity &Creature, int random, int level)
 	{
 		Entity bidoof{};
 		bidoof.lvl = rand() % Player.lvl + 1;
-		bidoof.hp = (rand() % 30 + 12) * bidoof.lvl;
+		bidoof.hp = (rand() % 20 + 12) * bidoof.lvl;
 
 	
 		do
@@ -55,7 +55,7 @@ void Enemies(Entity Player, Entity &Creature, int random, int level)
 	{
 		Entity ratata{};
 		ratata.lvl = rand() % Player.lvl + 1;
-		ratata.hp = (rand() % 30 + 15) * ratata.lvl;
+		ratata.hp = (rand() % 25 + 15) * ratata.lvl;
 		do
 		{
 			ratata.atk = (rand() % Player.def + 13) * ratata.lvl;
