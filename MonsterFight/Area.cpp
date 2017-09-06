@@ -32,7 +32,7 @@ void Movement(bool &exit, int &grass, int &pot,char mon[50],char name[50], Entit
 		delayText(15, "'a' to Heal with a Potion\n");
 		colorPicker(12);
 		delayText(15, "'q' to exit the Grass and Return to Home\n");
-		colorPicker(4);
+		colorPicker(2);
 		cout << "___________________________________________________" << endl;
 		cin >> in;
 
@@ -221,7 +221,7 @@ void startZone(bool &fight,char name[50] ,char mon[50], Entity &Player, int &max
 			}
 			else
 			{
-				colorPicker(1);
+				colorPicker(14);
 				Home(in, name, mon, Player, maxHp);
 			}
 		}

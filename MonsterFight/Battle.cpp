@@ -347,7 +347,7 @@ void fight(Entity &kobey, char mon[50], Entity enemy, bool &end,int &pot,char na
 
 			if (ea == 2)
 			{
-				if (enemy.hp < enemyMax && pot >= 0)
+				if (enemy.hp < enemyMax && pot > 0)
 				{
 					enemy.heal = rand() % (enemy.hp - 10) + 3;
 					enemy.hp = enemy.hp + enemy.heal;
@@ -360,7 +360,7 @@ void fight(Entity &kobey, char mon[50], Entity enemy, bool &end,int &pot,char na
 					delayText(15, " HP\n\n");
 					pot--;
 				}
-				else if(pot <= 0)
+				else if(pot == 0 || enemy.hp == enemyMax)
 				{
 					delayText(15, "Enemy Attempted to Steal a Potion but Failed\n\n");
 				}
