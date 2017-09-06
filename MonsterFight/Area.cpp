@@ -281,14 +281,16 @@ void marketPlace(char &in, char name[50], char mon[50], Entity &Player, int &pot
 {
 	char input = 0;
 	int increase = 0;
-	delayText(15, "\n\n WELCOME TO THE MARKET\n");
-	cout << "______________________________________________" << endl;
-	colorPicker(6);
-	delayText(15, "DollaryDoos: ");
-	cout << Player.money << endl;
-	colorPicker(5);
+
 	while (input >= 0)
 	{
+		delayText(15, "\n\n WELCOME TO THE MARKET\n");
+		cout << "______________________________________________" << endl;
+		colorPicker(6);
+		delayText(15, "DollaryDoos: ");
+		cout << Player.money << endl;
+		colorPicker(5);
+
 		delayText(15, "\n\n1.Protein Powder: 50 DollaryDoos 'Increase a Monsters Attack'\n");
 		delayText(15, "2.Healthy Mushroom: 80 DollaryDoos 'Increases a Monsters HP'\n");
 		delayText(15, "3.Hardening Fruit: 50 DollaryDoos 'Increases a Monsters Defense'\n");

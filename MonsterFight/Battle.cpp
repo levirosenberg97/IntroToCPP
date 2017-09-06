@@ -26,7 +26,7 @@ void Enemies(Entity Player, Entity &Creature, int random, int level)
 	{
 		Entity bidoof{};
 		bidoof.lvl = rand() % Player.lvl + 1;
-		bidoof.hp = (rand() % 40 + 12) * bidoof.lvl;
+		bidoof.hp = (rand() % 30 + 12) * bidoof.lvl;
 
 	
 		do
@@ -83,7 +83,7 @@ void Enemies(Entity Player, Entity &Creature, int random, int level)
 	{
 		Entity pidgey{};
 		pidgey.lvl = rand() % level + 1;
-		pidgey.hp = (rand() % 40 + 10) * pidgey.lvl;
+		pidgey.hp = (rand() % 30 + 10) * pidgey.lvl;
 
 	
 		do
@@ -243,7 +243,7 @@ void fight(Entity &kobey, char mon[50], Entity enemy, bool &end,int &pot,char na
 
 		if (input == '1')
 		{
-			dmg = (rand()%kobey.atk+1) - enemy.def;
+			dmg = (rand()%kobey.atk+4) - enemy.def;
 			if (dmg <= 3)
 			{
 				colorPicker(12);
@@ -333,7 +333,7 @@ void fight(Entity &kobey, char mon[50], Entity enemy, bool &end,int &pot,char na
 			delayText(15, " Has ");
 			cout << kobey.exp;
 			delayText(15, " Total EXP\n");
-
+			colorPicker(6);
 			delayText(15, "You Gained ");
 			cout << gain;
 			delayText(15, " DollaryDoos\n");
@@ -423,6 +423,7 @@ void fight(Entity &kobey, char mon[50], Entity enemy, bool &end,int &pot,char na
 			delayText(15, "You Lost ");
 			cout << loss;
 			delayText(15, " DollaryDoos/n");
+			kobey.hp = playerMax;
 			end = false;
 			break;
 		}
