@@ -43,7 +43,7 @@ void Enemies(Entity Player, Entity &Creature, int random, int level)
 			do
 			{
 				bidoof.def = rand() % ((80 + 1) * bidoof.lvl);
-			} while (bidoof.def >= Player.atk - 5);
+			} while (bidoof.def >= (Player.atk - 5) + 1);
 		}
 		Creature = bidoof;
 		colorPicker(12);
@@ -69,7 +69,7 @@ void Enemies(Entity Player, Entity &Creature, int random, int level)
 			do
 			{
 				ratata.def = rand() % ((80 + 1) * ratata.lvl);
-			} while (ratata.def >= Player.atk - 5);
+			} while (ratata.def >= (Player.atk - 5) + 1);
 		}
 		
 		
@@ -101,7 +101,7 @@ void Enemies(Entity Player, Entity &Creature, int random, int level)
 			do
 			{
 				pidgey.def = rand() % ((80 + 1) * pidgey.lvl);
-			} while (pidgey.def >= Player.atk - 5);
+			} while (pidgey.def >= (Player.atk - 5) + 1);
 		}
 		Creature = pidgey;
 		colorPicker(12);
